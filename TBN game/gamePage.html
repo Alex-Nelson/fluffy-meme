@@ -1,0 +1,58 @@
+<html>
+
+
+	<script>
+		function loadXMLDoc()
+		{
+			var xmlhttp;
+			if(window.XMLHttpRequest)
+			{
+				xmlhttp = new XMLHttpRequest();
+			}
+			else
+			{
+				// code for the older browsers
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlhttp.onreadystatechange = function(){
+				if (this.readyState == 4 && this.status == 200)
+				{
+					document.getElementById("demo").innerHTML = this.responseText;
+				}
+			};
+			
+			xmlhttp.open("GET", "xmlhttp.send()");
+		}
+	
+	</script>
+
+	<body>
+		
+		<form action="/databaseCode.php" method="post">
+			
+			<!-- If applicable, print any radio buttons if multiple-choice -->
+			<Input type='Radio' Name='answer' value='option1'
+			<?PHP print $option1; ?>>
+			
+			<Input type='Radio' Name='answer' value='option2'
+			<?PHP print $option2; ?>>
+			
+			<Input type='Radio' Name='answer' value='option3'
+			<?PHP print $option3; ?>>
+			
+			<Input type='Radio' Name='answer' value='option4'
+			<?PHP print $option4; ?>>
+			
+			<Input type='Radio' Name='answer' value='option5'
+			<?PHP print $option5; ?>>
+			
+			<!-- If free-response, display the text box -->
+			
+			<Input type="Submit" Name="Submit1" Value="Submit Answer">
+		
+		</form>
+	
+	</body>
+
+</html>
