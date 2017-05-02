@@ -1,0 +1,31 @@
+<ul>
+  <li>
+    <h3>Which of the following are equivalent to O(N)?</h3>
+    <input type="radio" name="question0" value="1">O(N + P) where P is less than N/2<br>
+    <input type="radio" name="question0" value="1">O(2N)<br>
+    <input type="radio" name="question0" value="1">O(N + log N)<br>
+    <input type="radio" name="question0" value="0">O(N + M)<br>
+  </li>
+  </ul>
+<button onclick="returnScore()">Submit</button>
+<script>
+var answers = ["0"], 
+    tot = answers.length;
+
+function getCheckedValue( radioName ){
+    var radios = document.getElementsByName( radioName ); // Get radio group by-name
+    for(var y=0; y<radios.length; y++)
+      if(radios[y].checked) return radios[y].value; // return the checked value
+}
+
+function getScore(){
+  var score = 0;
+  for (var i=0; i<tot; i++)
+    if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
+  return score;
+}
+
+function returnScore(){
+  alert("Your score is "+ getScore() +"/"+ tot);
+}	
+</script>
