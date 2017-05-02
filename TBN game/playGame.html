@@ -1,29 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <title>PLAY</title>
  <h1>PLAY</h1>
- <style>
+ <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Style for navigation bar and background of body -->
+		<!-- Will eventually move style code to separate CSS file -->
 
-@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+		<meta name="description" content="Summary of main story of game."/>
 
-body{
-  background: black;
-  
-}
-h1{
-	color: gray;
-
-	  font-size:46px;
-  right:150px;
-  text-align:center;
-  font-family:shadows into light;
-}
-h3{
-	color: gray;
-
-	  font-size:24px;
-  right:150px;
-  text-align:center;
-  font-family:shadows into light;
-}
-</style>
+		<meta charset="ISO-8859-1">
+</head>
 
 <body>
     <canvas id="myCanvas" width="578" height="400"></canvas>
@@ -37,4 +24,122 @@ h3{
       };
       imageObj.src = '';
     </script>
-  </body>
+
+	<ul>
+		<!-- Link to other pages on the website -->
+		<li><a href="HomePage.html">Home Page</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Summary.html">Summary</a></li>
+		<li><a href="Updates.html">Updates</a></li>
+		<li><a href="Contact.html">Contact Us</a></li>
+	</ul>
+	
+
+</body>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+</div>
+
+<div class="w3-content w3-display-container">
+
+<div class="w3-display-container mySlides">
+  <img src="Floor0Side1.JPG" width="980" height="690" alt="Floor0"
+			usemap="#floor0map"/>
+				
+			<map name="floor0map">
+				<area shape="rect" coords="690,444,726,412" alt="Lock" href="Floor0Side1Lock.JPG">
+			</map>
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    Floor 0, Door
+  </div>
+</div>
+
+
+<div class="w3-display-container mySlides">
+  <img src="Floor0Side2..JPG" width="980" height="690" alt="Floor0s"
+			usemap="#floor0smap"/>
+			<map name="floor0smap">
+				<area shape="rect" coords="447,218,833,17" alt="Lock" href="Floor0Side1Lock.JPG">
+				<area shape="rect" coords="51,371,219,300" alt="Lock" href="Floor0Side1Lock.JPG">
+			</map>
+  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+    Floor 0
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="w3-display-container mySlides">
+  <img src="Floor0Side3.JPG" width="980" height="690" alt="Floor0box"
+			usemap="#floor0box"/>
+			<map name="floor0box">
+				<area shape="rect" coords="359,433,559,318" alt="Lock" href="Floor0Side1Lock.JPG">
+			</map>
+  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+    Floor 0, Boxes
+  </div>
+</div>
+
+
+<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div><br/><br>
+
+<script>
+// function to change the clicked state
+function setClick(image) {
+    if (!image.clicked) {
+        image.clicked = true;
+		alert("I am an alert box!");
+    }
+	
+} 
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+imageArray[0] = new Image();
+imageArray[0].src = "Floor0Side1.JPG";
+imageArray[0].clicked = false; // clicked property
+// onclick call to setClick, this refers to the caller object.
+imageArray[0].onclick = function() { setClick(this); }
+imageArray[1] = new Image();
+imageArray[1].src = "Floor0Side2..JPG";
+imageArray[1].clicked = false;
+imageArray[1].onclick = function() { setClick(this); }
+ 
+imageArray[2] = new Image();
+imageArray[2].src = "Floor0Side3.JPG";
+imageArray[2].clicked = false;
+imageArray[2].onclick = function() { setClick(this); }
+</script>
+
+</body>
+</html>
+
+</html>

@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
+body{
+  background: black;
+  
+}
+h1{
+	color: gray;
+
+	  font-size:46px;
+  right:150px;
+  text-align:center;
+  font-family:shadows into light;
+}
+h3{
+	color: gray;
+
+	  font-size:24px;
+  right:150px;
+  text-align:center;
+  font-family:shadows into light;
+}
