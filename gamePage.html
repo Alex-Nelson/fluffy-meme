@@ -1,0 +1,100 @@
+<html>
+	<title>Question</title>
+	<head>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Style for navigation bar and background of body -->
+		<!-- Will eventually move style code to separate CSS file -->
+
+		<meta name="description" content="Summary of main story of game."/>
+
+		<meta charset="ISO-8859-1">
+		
+		<style>
+		p{
+			color: #ffffff;
+		}
+		label{
+			color: #ffffff;
+		}
+		
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<div class="w3-content w3-display-container">
+			
+			<img src="Floor0Side1Lock.JPG" width="500" height="500" alt="Floor0">
+			
+			<form>
+				
+				<p>Which of the following are equivalent to O(N)?</p>
+				<label><input type="checkbox" name="choice" value="1">O(N + P) where P is less than N/2</label><br>
+				<label><input type="checkbox" name="choice" value="1">O(2N)</label><br>
+				<label><input type="checkbox" name="choice" value="1">O(N + log N)</label><br>
+				<label><input type="checkbox" name="choice" value="0">O(N + M)</label><br>
+				
+				<button id="submit">Submit Answer</button>
+			
+			</form>
+		</div>
+		
+		<script>
+		//<button id="submit">Submit Answer</button>
+			/*
+				This function will check if the user has selected the correct responses
+				and will explain why the correct answer is right regardless of how well they
+				did.
+			*/
+			function checkAnswer()
+			{
+				var answer = document.forms[0];
+				var correct = false;
+				for(var i = 0; i < answer.length; i++)
+				{
+					if(answer[i].checked)
+					{
+						if(ansnwer[i].value == '1')
+						{
+							correct = true;
+						}
+						else
+						{
+							correct = false;
+						}
+					}
+				}
+				if(correct == true)
+				{
+					alert("Correct! '\n' Answer: All but O(N + M) '\n' Explanation: If P < N/2, then we know that N "
+					 "is the dominant term so we can drop O(P). '\n'  O(2N) is O(N) since we drop constants. '\n'"
+					 "O(N) dominates O(log N), so we can drop the O(log N). '\n'"
+					 "There is no established relationship between N and M, so we have to keep both variables in there.");
+				}
+				else
+				{
+					alert("Incorrect. '\n'  Correct Answer:  All but O(N + M) '\n' Explanation: If P < N/2, then we know that N" 
+					 "is the dominant term so we can drop O(P). '\n'  O(2N) is O(N) since we drop constants. '\n'"
+					 "O(N) dominates O(log N), so we can drop the O(log N). '\n'"
+					 "There is no established relationship between N and M, so we have to keep both variables in there.");
+				}
+				//return true;
+			}
+			
+			// This function will take the user back one page after exiting the first pop-up window.
+			function goBack()
+			{
+				window.history.go(-1);
+				//return true;
+			}
+			
+			var myBtn = document.getElementById('submit');
+			myBtn.addEventListener('click', checkAnswer);
+			myBtn.addEventListener('click', goBack);
+	
+		</script>
+	</body>
+
+</html>
