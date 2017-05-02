@@ -1,6 +1,6 @@
 <ul>
   <li>
-    <h3>Which of the following are equivalent to O(N)?</h3>
+    <h3>Which of the following are not equivalent to O(N)?</h3>
     <input type="radio" name="question0" value="1">O(N + P) where P is less than N/2<br>
     <input type="radio" name="question0" value="1">O(2N)<br>
     <input type="radio" name="question0" value="1">O(N + log N)<br>
@@ -19,13 +19,13 @@ function getCheckedValue( radioName ){
 }
 
 function getScore(){
-  var score = 0;
+  var score = "Incorrect. Correct Answer:  All but O(N + M)Explanation: If P < N/2, then we know that N is the dominant term so we can drop O(P). O(2N) is O(N) since we drop constants. O(N) dominates O(log N), so we can drop the O(log N). There is no established relationship between N and M, so we have to keep both variables in there.";
   for (var i=0; i<tot; i++)
-    if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
+    if(getCheckedValue("question"+i)===answers[i]) score = "Correct! Answer: All but O(N + M) Explanation: If P < N/2, then we know that N  is the dominant term so we can drop O(P). O(2N) is O(N) since we drop constants. O(N) dominates O(log N), so we can drop the O(log N). There is no established relationship between N and M, so we have to keep both variables in there."; // increment only
   return score;
 }
 
 function returnScore(){
-  alert("Your score is "+ getScore() +"/"+ tot);
+  alert(" "+ getScore());
 }	
 </script>
